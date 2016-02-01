@@ -76,9 +76,6 @@ class InitialSchema < ActiveRecord::Migration
       t.integer :ancestor_id
       t.integer :position
       t.integer :page_id
-      t.string :rank
-      t.string :scientific_name, null: false
-      t.string :canonical_form, null: false
     end
 
     # Store "natively" what we need to lookup; "cache" what we regularly need to
@@ -116,7 +113,7 @@ class InitialSchema < ActiveRecord::Migration
       t.boolean :virus
     end
 
-    create_table :common_names do |t|
+    create_table :vernaculars do |t|
       t.integer :name_id
       t.integer :resource_id
       t.integer :node_id
@@ -413,6 +410,10 @@ class InitialSchema < ActiveRecord::Migration
       t.timestamps, null: false
     end
 
+    # NOTE: yes, this is a really large table, but I don't see a great place to
+    # break it up. We could extract the "manually counted" stuff, but I don't
+    # see that as a huge win. :\ TODO: as we add anti-spam gems, I expect to add
+    # a field or two to this.
     create_table :users do |t|
       t.integer :failed_login_attempts
       t.integer :image_file_size
@@ -444,7 +445,7 @@ class InitialSchema < ActiveRecord::Migration
       t.string :url
       t.string :location
       # We never ever ever break up the name for anything, ever. So let's just:
-      t.string :name
+      t.string :name, limit: 64
       t.string :tagline, limit: 64
       t.string :password_hash
       t.string :api_key
@@ -452,8 +453,8 @@ class InitialSchema < ActiveRecord::Migration
       t.string :image_file_name
       t.string :image_content_type
       # Enumerable: none assistant full master
-      t.string :curator_type
-      t.string :requested_curator_type
+      t.string :curator_type, default: "none", limit: 16
+      t.string :requested_curator_type, default: "none", limit: 16
       # Used for email validation of various sorts:
       t.string :code
       t.datetime :code_expires_at
