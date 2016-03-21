@@ -24,7 +24,7 @@ class InitialSchema < ActiveRecord::Migration
       t.boolean :auto_publish, null: false, default: false
       # not_trusted applies to _all_ resources!
       t.boolean :not_trusted, null: false, default: false
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
     create_table :resources do |t|
@@ -52,7 +52,7 @@ class InitialSchema < ActiveRecord::Migration
       t.boolean :has_duplicate_taxa, null: false, default: false
       t.boolean :force_harvest, null: false, default: false
       t.datetime :published_at
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
     create_table :nodes do |t|
@@ -173,7 +173,7 @@ class InitialSchema < ActiveRecord::Migration
       t.string :src
       # Note that this can include "spatial location" from EOL2:
       t.text :credits_json
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
     create_table :videos do |t|
@@ -199,7 +199,7 @@ class InitialSchema < ActiveRecord::Migration
       t.string :format
       # Note that this can include "spatial location" from EOL2:
       t.text :credits_json
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
     create_table :sounds do |t|
@@ -225,7 +225,7 @@ class InitialSchema < ActiveRecord::Migration
       t.string :format
       # Note that this can include "spatial location" from EOL2:
       t.text :credits_json
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
     create_table :articles do |t|
@@ -243,7 +243,7 @@ class InitialSchema < ActiveRecord::Migration
       # HTML:
       t.string :body
       t.text :credits_json
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
     create_table :links do |t|
@@ -262,7 +262,7 @@ class InitialSchema < ActiveRecord::Migration
       t.string :description
       t.string :url
       t.text :credits_json
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
     create_table :traits do |t|
@@ -281,7 +281,7 @@ class InitialSchema < ActiveRecord::Migration
       t.string :units
       t.string :original_units
       t.text :metadata_json
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
     # A kind of "miscelaneous" bucket which can handle scripts/flash/html5/etc:
@@ -303,7 +303,7 @@ class InitialSchema < ActiveRecord::Migration
       t.string :description
       t.string :src
       t.text :credits_json
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
     create_table :sections do |t|
@@ -407,7 +407,7 @@ class InitialSchema < ActiveRecord::Migration
       t.boolean :hide_from_predicates, null: false, default: false
       t.boolean :hide_from_values, null: false, default: false
       t.boolean :normalize_value, null: false, default: true
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
     # NOTE: yes, this is a really large table, but I don't see a great place to

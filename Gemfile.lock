@@ -159,7 +159,7 @@ DEPENDENCIES
   haml (~> 4.0)
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2 (~> 0.3.18)
+  mysql2 (~> 0.3)
   rails (= 4.2.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
