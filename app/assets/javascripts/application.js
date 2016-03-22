@@ -14,7 +14,8 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
-//= require galleria
+//= require galleria-1.4.2
+//= require galleria.classic.min
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
