@@ -1,3 +1,100 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,500italic,700italic,300,400,500,700)
+
+body
+  font-size: 0.9em
+  font-family: 'Open Sans', sans-serif
+
+ul
+  list-style-type: none
+
+body p
+  font-weight: 300
+
+#identifiers
+  width: 1050px
+
+#names
+  font-size: 1.4em
+  width: 500px
+  height: 3em
+  float: left
+  display: flex
+  justify-content: center
+  margin-right: 50px
+
+#ancestry
+  height: 3em
+  width: 500px
+  float: left
+  display: flex
+  justify-content: center
+
+span
+  &.scientific_name
+    font-style: italic
+  &.attribution
+    display: none
+
+#ancestry ul
+  margin: 0
+  li
+    display: inline-block
+    + li:before
+      content: "→"
+      vertical-align: middle
+      display: inline-block
+      padding: 0 0.25em
+
+#main
+  clear: both
+  width: 1050px
+
+#summary
+  width: 580px
+  float: left
+  text-align: center
+  .auto_summary
+    font-weight: 400
+  table
+    margin-left: auto
+    margin-right: auto
+
+#media
+  float: left
+  margin-right: 50px
+  ul
+    margin: 0
+    padding: 0
+
+#map
+  img
+    height: 255px
+
+#trait_summary .traits
+  width: 90%
+  th
+    font-weight: 300
+    padding-right: 1em
+    text-align: right
+  td
+    font-weight: 400
+    padding-left: 1em
+    text-align: left
+
+#discovery
+  clear: both
+
+#navigaton
+  float: right
+  width: 50px
+  ul
+    margin: 0
+    padding: 0
+
+.galleria
+  width: 420px
+  height: 420px
+  background: #000
