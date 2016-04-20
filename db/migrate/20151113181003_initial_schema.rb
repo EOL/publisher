@@ -167,7 +167,7 @@ class InitialSchema < ActiveRecord::Migration
       t.string :medium_square_size, limit: 10
       t.string :large_size, limit: 10
       t.string :original_size, limit: 16
-      t.string :source_url
+      t.text :urls_json
       # This can be modified; strip the extension and add one of the following:
       # %w( _smsq _sm _mdsq _md _lg ) ...Without these, you get the full size.
       t.string :src
