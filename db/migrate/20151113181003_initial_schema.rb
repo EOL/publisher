@@ -167,12 +167,14 @@ class InitialSchema < ActiveRecord::Migration
       t.string :medium_square_size, limit: 10
       t.string :large_size, limit: 10
       t.string :original_size, limit: 16
-      t.text :urls_json
+      # This is ONLY the source URL, which we want to link to obviously.
+      # Additional URLs can be in the source_info_json.
+      t.string :source_url
       # This can be modified; strip the extension and add one of the following:
       # %w( _smsq _sm _mdsq _md _lg ) ...Without these, you get the full size.
       t.string :src
       # Note that this can include "spatial location" from EOL2:
-      t.text :credits_json
+      t.text :source_info_json
       t.timestamps null: false
     end
 
